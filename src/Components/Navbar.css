@@ -1,0 +1,198 @@
+.navbar {
+    background: linear-gradient( white 0%, rgba(255, 255, 255, 0) 100%);
+    align-items: center;
+    position: fixed;
+    top: 0;
+  }
+  
+  .navbar-container {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    max-width: 1500px;
+    padding: 10px;
+  }
+
+  .navbar-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+  }
+  
+  .navbar-logo {
+    align-self: center;
+    color: #5EAAC8;
+    justify-self: start;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-title{
+    font-family: 'Baloo Bhaijaan';
+    text-decoration: none;
+    position: absolute;
+    font-size: 50%;
+    text-align: center;
+    color: #5EAAC8;
+  }
+
+  .logo{
+    display: flex;
+    justify-self: start;
+    align-self: center;
+    height: 44.64px;
+  }
+  
+  .fa-typo3 {
+    margin-left: 0.5rem;
+    font-size: 1.8rem;
+  }
+  
+  .nav-menu {
+    display: flex;
+    background-color: red;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 212px;
+    justify-content: end;
+    margin-right: 2rem;
+  }
+  
+  .nav-item {
+    height: 80px;
+  }
+  
+  .nav-links {
+    position: absolute;
+    color: #2D6780;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    left: 0px;
+  }
+  
+  .nav-links:hover {
+    border-bottom: 4px solid #5EAAC8;
+    transition: all 0.2s ease-out;
+  }
+  
+  .fa-bars {
+    color: #5EAAC8;
+  }
+  
+  .nav-links-mobile {
+    display: none;
+  }
+  
+  .menu-icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 960px) {
+  
+    .NavbarItems {
+      position: relative;
+    }
+  
+    .nav-menu {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-gap: 10px;
+        list-style: none;
+        text-align: center;
+        width: 60vw;
+        justify-content: end;
+        margin-right: 2rem;
+      }
+  
+    .nav-menu.active {
+        box-sizing: border-box;
+        border-radius: 0px 80px 80px 0px;
+        position: absolute;
+        width: 25%;
+        height: 890%;
+        right: 0px;
+        top: 0px;
+        background: rgba(94, 43, 137, 0.71);
+        mix-blend-mode: normal;
+        border: 1px solid #FFFFFF;
+        left: 0;
+        opacity: 1;
+        z-index: 1;
+        box-shadow: 16px 14px 14px rgba(140, 145, 187, 0.36);
+    }
+
+    .nav-menuORIGINAL.active {
+        background: #242222;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+  
+    .nav-links {
+      text-align: center;
+      padding: 2rem;
+      width: 100%;
+      display: table;
+    }
+  
+    .nav-links:hover {
+      background-color: #5EAAC8;
+      color: #242424;
+      border-radius: 0;
+    }
+  
+    .navbar-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(25%, 50%);
+    }
+  
+    .menu-icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 60%);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  
+    .fa-times {
+      color: #5EAAC8;
+      font-size: 2rem;
+    }
+  
+    .nav-links-mobile {
+      display: block;
+      text-align: center;
+      margin: 2rem auto;
+      border-radius: 4px;
+      width: 80%;
+      text-decoration: none;
+      font-size: 1.5rem;
+      background-color: transparent;
+      color: #fff;
+      padding: 14px 20px;
+      border: 1px solid #fff;
+      transition: all 0.3s ease-out;
+    }
+  
+    .nav-links-mobile:hover {
+      background: #5EAAC8;
+      color: #242424;
+      transition: 250ms;
+    }
+}
