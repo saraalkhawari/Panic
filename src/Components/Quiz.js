@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { quiz } from "./data/questions";
 import "./Quiz.css";
+import { getDatabase, ref, push } from "firebase/database";
 
 const Quiz = () => {
   const [activeQuestion, setActiveQuestion] = useState(0); //keep track of current question
@@ -19,6 +20,13 @@ const Quiz = () => {
 
   const { questions } = quiz;
   const { question, choices, correctAnswer } = questions[activeQuestion]; //starts with the first question
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (showResult && !submitted) {
+      submitResult();
+    }
+  }, [showResult]);
 
   const onClickNext = () => {
     if (choices.length == 2) {
@@ -52,7 +60,6 @@ const Quiz = () => {
     } else {
       setActiveQuestion(0);
       setShowResult(true);
-      submitResult();
     }
   }; // upon clicking next
 
@@ -76,7 +83,9 @@ const Quiz = () => {
   };
 
   const submitResult = () => {
-    console.log(result);
+    setSubmitted(true);
+    const db = getDatabase();
+    push(ref(db, "results"), result);
   };
 
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
