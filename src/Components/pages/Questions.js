@@ -1,9 +1,9 @@
 import React from "react";
 import "../../App.css";
-import Quiz from "../TestQuiz";
+import Quiz from "../Quiz";
 import background from "../Images/BGUpS.png";
 
-function PartAQ() {
+function Questions() {
   return (
     <>
       <div>
@@ -14,4 +14,4 @@ function PartAQ() {
   );
 }
 
-export default PartAQ;
+export default Questions;
